@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "906fcc3b-8f3e-4ad8-8949-a6419b0ba6af",
+		"name": "product-management-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15205532"
+	},
+	"item": [
+		{
+			"name": "Pharmacy",
+			"item": [
+				{
+					"name": "List pharmacies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show exist pharmacy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/19000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"19000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show not exist pharmacy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/30000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"30000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add pharmacy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "any",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "any address",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pharmacy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/19001",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"19001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete not exit pharmacy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/19001",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"19001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pharmacy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ay 7aga",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ay 7aga prdo",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/19003",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"19003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update not exist pharmacy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ay 7aga",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ay 7aga prdo",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/pharmacies/30000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pharmacies",
+								"30000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
