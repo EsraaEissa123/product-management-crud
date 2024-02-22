@@ -4,7 +4,7 @@
 ### How to setup this project?
 * First step you need to clone it in your computer using this command:
 ```php
-    git clone https://github.com/EsraaEissa123/product-management-crud.git:
+    git clone https://github.com/EsraaEissa123/product-management-crud.git
 ```
 
 * Second step just need to run this command:
@@ -26,7 +26,3 @@
 product-management-crud.postman_collection
 
 
-#### Note:
-<strong>
-I still enhance in it
-</storng>
