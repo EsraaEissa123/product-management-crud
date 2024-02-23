@@ -13,7 +13,6 @@
         @endif
         <div class="d-flex justify-content-between mb-3 mt-3">
             <h2>Products</h2>
-            <a class="btn btn-dark" href="{{ route('pharmacies.index') }}">Pharmacies</a>
         </div>
         <div class="pull-left">
             <input type="text" id="keyword" class="mb-3 form-control" placeholder="Search here...">
@@ -47,7 +46,7 @@
                     @endif
                 </td>
                 <td>
-                    <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                    <form id="deleteForm" action="{{ route('products.destroy', $product->id) }}" method="POST">
                         <a href="{{ route('products.show', $product->id) }}" title="View Product"><i
                                 style="font-size:30px" class="fa fa-eye black"></i></a>
                         <a href="{{ route('products.edit', $product->id) }}" title="Edit Product"><i
@@ -55,8 +54,8 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" title="Delete Product"
-                            style="background: none; border: none; cursor: pointer; padding: 0;"><i
-                                style="font-size:30px" class="fa fa-trash-o"></i></button>
+                            style="background: none; border: none; cursor: pointer; padding: 0;"
+                            onclick="confirmDelete(event)"><i style="font-size:30px" class="fa fa-trash-o"></i></button>
                     </form>
                 </td>
             </tr>
@@ -72,7 +71,7 @@
         let keyword = $(this).val();
 
         if (keyword.trim() === '') {
-            window.location.reload(); // Reload the page
+            window.location.reload();
         } else {
             let url = "{{ route('products.search') }}?keyword=" + keyword;
             $.ajax({
@@ -95,5 +94,21 @@
             });
         }
     });
+   function confirmDelete(event) {
+event.preventDefault();
+Swal.fire({
+title: 'Are you sure?',
+text: "You won't be able to revert this!",
+icon: 'warning',
+showCancelButton: true,
+confirmButtonColor: '#3085d6',
+cancelButtonColor: '#d33',
+confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+if (result.isConfirmed) {
+document.getElementById('deleteForm').submit();
+}
+});
+}
 </script>
 @endsection

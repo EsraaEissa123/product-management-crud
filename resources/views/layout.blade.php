@@ -17,16 +17,54 @@
         .black {
             color: black;
         }
+
+        /* Example CSS */
+        .navbar {
+            background-color: #333;
+            border: none;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .icon-bar {
+            background-color: white;
+        }
+
+        .navbar-icons {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar-icons:hover {
+            color: lightgray;
+            /* Change color on hover if desired */
+        }
     </style>
     @yield('styles')
     <title>Products</title>
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <a class="navbar-brand" href="#">Your Brand</a>
+            </div>
+            <div>
+                <a class="navbar-icons ml-3" href="{{ route(" products.index") }}">Products</a>
+                <a class="navbar-icons ml-3" href="{{ route(" pharmacies.index") }}">Pharmacies</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         @yield('content')
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('scripts')
 </body>
 
